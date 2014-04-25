@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+    <setting id="setting_redraw_interval" type="labelenum" label="32112" values="15|30|60" default="30"/>
+    <setting id="resolution" type="labelenum" label="32114" values="1600" default="1600"/>
+    <setting id="projection" type="labelenum" label="32115" values="mercator|peters|mollweide|rectangular|moon" default="mercator"/>
+</settings>

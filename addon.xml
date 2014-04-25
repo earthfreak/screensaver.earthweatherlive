@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="screensaver.earthweatherlive" name="Earth weather Screensaver" version="1.0.0" provider-name="Earth freak" >
+  <requires>
+     <import addon="xbmc.python" version="2.1.0"/>
+     <import addon="xbmc.addon"  version="12.0.0"/>
+  </requires>
+  <extension point="xbmc.ui.screensaver" library="default.py"/>
+  <extension point="xbmc.addon.metadata">
+    <provides>executable</provides>
+    <summary lang="en">Screensaver earth weather</summary>
+    <description lang="en">A screensaver which displays composed images of the earth</description>
+    <platform>all</platform>
+    <disclaimer lang="en"> </disclaimer>
+    <language></language>
+    <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+    <forum></forum>
+    <website></website>
+    <email></email>
+    <source></source>
+  </extension>
+</addon>

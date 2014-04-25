@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<window>
+    <controls>
+        <control type="image" id="30020">
+            <description>Black Background</description>
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1280</width>
+            <height>720</height>
+            <texture>black.png</texture>
+            <aspectratio>center</aspectratio>
+        </control>
+    </controls>
+</window>
