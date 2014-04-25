@@ -7,8 +7,8 @@
   <extension point="xbmc.ui.screensaver" library="default.py"/>
   <extension point="xbmc.addon.metadata">
     <provides>executable</provides>
-    <summary lang="en">Screensaver earth weather</summary>
-    <description lang="en">A screensaver which displays composed images of the earth</description>
+    <summary lang="en">Displays day night image of the earth with weather (imagery: die.net)</summary>
+    <description lang="en">A XMBC screensaver which displays composed images of the earth</description>
     <platform>all</platform>
     <disclaimer lang="en"> </disclaimer>
     <language></language>

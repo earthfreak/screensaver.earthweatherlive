@@ -44,7 +44,7 @@ blockSizeNormal = 3
 blockSizeSeconds = 8
 
 
-scriptId   = 'screensaver.unaryclock'
+scriptId   = 'screensaver.earthweatherlive'
 
 
 
@@ -90,7 +90,7 @@ class Screensaver(xbmcgui.WindowXMLDialog):
             
 
     def onInit(self):
-        self.log("Screensaver starting")
+        self.log("Earthweatherlive starting")
         self.addon = xbmcaddon.Addon(scriptId)
         self.showSeconds = True
         self.redrawInterval = int(self.addon.getSetting('setting_redraw_interval'))
@@ -116,6 +116,6 @@ class Screensaver(xbmcgui.WindowXMLDialog):
         self.close()
     
     def log(self, msg):
-        xbmc.log(u'Unary Clock Screensaver: %s' % msg)
+        xbmc.log(u'Earthweatherlive Screensaver: %s' % msg)
 		
 
