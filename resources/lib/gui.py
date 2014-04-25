@@ -34,19 +34,7 @@ addon_name = addon.getAddonInfo('name')
 addon_path = addon.getAddonInfo('path')
 image_dir = xbmc.translatePath( os.path.join( addon_path, 'resources', 'skins', 'default', 'media' ,'').encode("utf-8") ).decode("utf-8")
 
-
-
-#lightSizeNormal = 50
-#lightPaddingNormal = 2
-#blockPaddingLarge = 50
-#blockPaddingSmall = 10
-blockSizeNormal = 3
-blockSizeSeconds = 8
-
-
 scriptId   = 'screensaver.earthweatherlive'
-
-
 
 class Screensaver(xbmcgui.WindowXMLDialog):
 
@@ -66,6 +54,8 @@ class Screensaver(xbmcgui.WindowXMLDialog):
 
     def showClock(self):
         now = datetime.datetime.today()
+        
+        # JUST A BUNCH OF TEST IMAGES
         #urllib.urlretrieve('http://p1.pichost.me/i/27/1503466.jpg', '/tmp/a.jpg')
         #urllib.urlretrieve('http://www.kguttag.com/wp-content/uploads/2012/02/res-chart-KGOT-1280x720-002.png', '/tmp/b.png')
         #urllib.urlretrieve('http://www.kguttag.com/wp-content/uploads/2012/02/res-chart-KGOT-848x480-002.png', '/tmp/b.png')
@@ -73,19 +63,16 @@ class Screensaver(xbmcgui.WindowXMLDialog):
         #urllib.urlretrieve('http://p1.pichost.me/i/27/1503466.jpg', '/tmp/b.jpg')
         
         if self.waitcounter ==  10 or self.waitcounter > 20:
-            #' + self.projection + '
             if self.projection == 'moon':
                 urllib.urlretrieve('http://static.die.net/moon/512.jpg', '/tmp/' + str(self.waitcounter) + '.map')
             else:    
                 urllib.urlretrieve('http://static.die.net/earth/' + self.projection + '/1600.jpg', '/tmp/' + str(self.waitcounter) + '.map')
+            # renaming the .jpg file into .map on purpose. 
+            # somehow setimage doen't scale file with jpg extension properly
             self.background.setImage('/tmp/' + str(self.waitcounter) + '.map') 
         if self.waitcounter > 20:    
             self.waitcounter = 0
-        #elif self.waitcounter > 20:
-        #    urllib.urlretrieve('http://static.die.net/earth/' + self.projection + '/1600.jpg', '/tmp/bb.map')
-        #    self.background .setImage('/tmp/bb.map')  
-        #    self.waitcounter = 0                
-        
+
         self.waitcounter += 1              
             
 
@@ -99,8 +86,6 @@ class Screensaver(xbmcgui.WindowXMLDialog):
         self.background = self.getControl(30020)
         
         self.monitor = self.ExitMonitor(self.exit, self.log)
-
-        #self.background = self.getControl(30020)
         self.waitcounter = 100000
 
         self.showClock()
