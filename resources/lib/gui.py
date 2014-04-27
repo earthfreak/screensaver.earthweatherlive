@@ -61,15 +61,15 @@ class Screensaver(xbmcgui.WindowXMLDialog):
         #urllib.urlretrieve('http://www.kguttag.com/wp-content/uploads/2012/02/res-chart-KGOT-848x480-002.png', '/tmp/b.png')
         #urllib.urlretrieve('http://www.themacfaq.com/wp-content/uploads/2013/05/1920x1080_overscan.gif', '/tmp/b.gif')
         #urllib.urlretrieve('http://p1.pichost.me/i/27/1503466.jpg', '/tmp/b.jpg')
-        
+
         if self.waitcounter ==  10 or self.waitcounter > 20:
             if self.projection == 'moon':
-                urllib.urlretrieve('http://static.die.net/moon/512.jpg', '/tmp/' + str(self.waitcounter) + '.map')
+                urllib.urlretrieve('http://static.die.net/moon/512.jpg', self.tmproot + '/' + str(self.waitcounter) + '.map')
             else:    
-                urllib.urlretrieve('http://static.die.net/earth/' + self.projection + '/1600.jpg', '/tmp/' + str(self.waitcounter) + '.map')
+                urllib.urlretrieve('http://static.die.net/earth/' + self.projection + '/1600.jpg', self.tmproot + '/' + str(self.waitcounter) + '.map')
             # renaming the .jpg file into .map on purpose. 
             # somehow setimage doen't scale file with jpg extension properly
-            self.background.setImage('/tmp/' + str(self.waitcounter) + '.map') 
+            self.background.setImage(self.tmproot + '/' + str(self.waitcounter) + '.map') 
         if self.waitcounter > 20:    
             self.waitcounter = 0
 
@@ -84,7 +84,7 @@ class Screensaver(xbmcgui.WindowXMLDialog):
         self.projection = self.addon.getSetting('projection')
         self.resolution = self.addon.getSetting('resolution')
         self.background = self.getControl(30020)
-        
+        self.tmproot = xbmc.translatePath('special://temp')        
         self.monitor = self.ExitMonitor(self.exit, self.log)
         self.waitcounter = 100000
 
